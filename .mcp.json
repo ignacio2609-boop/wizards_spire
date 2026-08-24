@@ -3,6 +3,10 @@
     "valibot": {
       "type": "http",
       "url": "https://valibot.dev/mcp"
+    },
+    "daisyui": {
+      "type": "http",
+      "url": "https://gitmcp.io/saadeghi/daisyui"
     }
   }
 }
