@@ -15,6 +15,8 @@
   "dependencies": {
     "@nuxt/eslint": "1.17.0",
     "@pinia/nuxt": "^1.0.2",
+    "@vueuse/core": "^14.4.0",
+    "@vueuse/nuxt": "^14.4.0",
     "nuxt": "^4.5.2",
     "pinia": "^4.0.3",
     "vue": "^3.5.41",
