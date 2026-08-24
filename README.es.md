@@ -1,6 +1,6 @@
 # La Torre del Mago
 
-*[Read this in English](./README.md)*
+_[Read this in English](./README.md)_
 
 La Torre del Mago es una aplicación web para crear personajes de Dungeons &
 Dragons 5ª edición: completa la creación de tu personaje paso a paso, tira tus

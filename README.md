@@ -1,6 +1,6 @@
 # Wizard's Spire
 
-*[Leer esto en español](./README.es.md)*
+_[Leer esto en español](./README.es.md)_
 
 Wizard's Spire is a web app for building Dungeons & Dragons 5th Edition
 characters: walk through character creation step by step, roll your stats
