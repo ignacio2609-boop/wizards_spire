@@ -1,8 +1,8 @@
-# Wizard's Spire
+# La Torre del Mago
 
 *[Read this in English](./README.md)*
 
-Wizard's Spire es una aplicación web para crear personajes de Dungeons &
+La Torre del Mago es una aplicación web para crear personajes de Dungeons &
 Dragons 5ª edición: completa la creación de tu personaje paso a paso, tira tus
 estadísticas con dados 3D interactivos y exporta una ficha en PDF lista para
 jugar — gratis, desde el navegador, sin instalar nada.
