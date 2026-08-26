@@ -1,1 +1,12 @@
-{}
+{
+  "common": {
+    "appName": "Wizard's Spire"
+  },
+  "home": {
+    "hero": {
+      "badge": "D&D Character Creator",
+      "description": "A simple way to create your character for your Dungeons & Dragons games. Designed to speed up the process so you can focus on the adventure.",
+      "cta": "Get Started"
+    }
+  }
+}

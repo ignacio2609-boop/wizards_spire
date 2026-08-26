@@ -1,1 +1,12 @@
-{}
+{
+  "common": {
+    "appName": "La Torre del Mago"
+  },
+  "home": {
+    "hero": {
+      "badge": "Creador de personajes D&D",
+      "description": "Una forma sencilla de crear tu personaje para tus partidas de Dungeons & Dragons. Diseñado para agilizar el proceso y permitirte concentrarte en la aventura.",
+      "cta": "Comenzar"
+    }
+  }
+}
