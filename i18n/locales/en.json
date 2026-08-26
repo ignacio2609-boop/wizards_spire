@@ -1,12 +1,35 @@
 {
   "common": {
-    "appName": "Wizard's Spire"
+    "appName": "Wizard's Spire",
+    "alignments": {
+      "lawfulGood": "Lawful Good",
+      "neutralGood": "Neutral Good",
+      "chaoticGood": "Chaotic Good",
+      "lawfulNeutral": "Lawful Neutral",
+      "trueNeutral": "True Neutral",
+      "chaoticNeutral": "Chaotic Neutral",
+      "lawfulEvil": "Lawful Evil",
+      "neutralEvil": "Neutral Evil",
+      "chaoticEvil": "Chaotic Evil"
+    }
   },
   "home": {
     "hero": {
       "badge": "D&D Character Creator",
       "description": "A simple way to create your character for your Dungeons & Dragons games. Designed to speed up the process so you can focus on the adventure.",
       "cta": "Get Started"
+    }
+  },
+  "create": {
+    "title": "Create your character",
+    "form": {
+      "characterName": "Character name",
+      "playerName": "Player name",
+      "classes": "Class",
+      "background": "Background",
+      "race": "Race",
+      "alignment": "Alignment",
+      "alignmentPlaceholder": "Select an alignment"
     }
   }
 }

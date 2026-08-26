@@ -1,12 +1,35 @@
 {
   "common": {
-    "appName": "La Torre del Mago"
+    "appName": "La Torre del Mago",
+    "alignments": {
+      "lawfulGood": "Legal Bueno",
+      "neutralGood": "Neutral Bueno",
+      "chaoticGood": "Caótico Bueno",
+      "lawfulNeutral": "Legal Neutral",
+      "trueNeutral": "Neutral",
+      "chaoticNeutral": "Caótico Neutral",
+      "lawfulEvil": "Legal Malvado",
+      "neutralEvil": "Neutral Malvado",
+      "chaoticEvil": "Caótico Malvado"
+    }
   },
   "home": {
     "hero": {
       "badge": "Creador de personajes D&D",
       "description": "Una forma sencilla de crear tu personaje para tus partidas de Dungeons & Dragons. Diseñado para agilizar el proceso y permitirte concentrarte en la aventura.",
       "cta": "Comenzar"
+    }
+  },
+  "create": {
+    "title": "Crea tu personaje",
+    "form": {
+      "characterName": "Nombre del personaje",
+      "playerName": "Nombre del jugador",
+      "classes": "Clase",
+      "background": "Trasfondo",
+      "race": "Raza",
+      "alignment": "Alineamiento",
+      "alignmentPlaceholder": "Selecciona un alineamiento"
     }
   }
 }
