@@ -12,5 +12,5 @@ const rawClasses = [
 ];
 
 export const classes: CharacterClass[] = rawClasses.map((characterClass) =>
-  v.parse(characterClassSchema, characterClass),
+  v.parse(characterClassSchema, characterClass)
 );
