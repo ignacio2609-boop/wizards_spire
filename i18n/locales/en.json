@@ -29,7 +29,8 @@
       "background": "Background",
       "race": "Race",
       "alignment": "Alignment",
-      "alignmentPlaceholder": "Select an alignment"
+      "alignmentPlaceholder": "Select an alignment",
+      "submit": "Save"
     }
   }
 }

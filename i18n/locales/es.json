@@ -29,7 +29,8 @@
       "background": "Trasfondo",
       "race": "Raza",
       "alignment": "Alineamiento",
-      "alignmentPlaceholder": "Selecciona un alineamiento"
+      "alignmentPlaceholder": "Selecciona un alineamiento",
+      "submit": "Guardar"
     }
   }
 }
