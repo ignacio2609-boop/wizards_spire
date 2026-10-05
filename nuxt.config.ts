@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite';
+import { DICE_BOX_ASSET_PATH } from './shared/dice-box';
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -19,6 +20,15 @@ export default defineNuxtConfig({
     ],
   },
   css: ['~/assets/css/global.css'],
+  nitro: {
+    publicAssets: [
+      {
+        baseURL: DICE_BOX_ASSET_PATH,
+        // Nitro resolves this relative to the server/ directory
+        dir: '../node_modules/@3d-dice/dice-box/dist/assets',
+      },
+    ],
+  },
   vite: {
     plugins: [tailwindcss()],
   },
