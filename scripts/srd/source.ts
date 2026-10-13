@@ -1,8 +1,5 @@
-// The import reads the JSON files the 5e-bits API is built from, not the API itself:
-// one request per collection and no rate limit. The data used to live in its own repo
-// (5e-bits/5e-database, archived in 2026-10) and is now a package of the API monorepo.
-// Pinned to a commit so re-running the import is reproducible. Bump it deliberately to
-// pull upstream fixes, then review the diff of app/data/srd/.
+// The import reads the JSON files the 5e-bits API is built from, not the API itself.
+// Pinned to a commit so re-running the import is reproducible.
 export const SRD_SOURCE = {
   repo: '5e-bits/5e-srd-api',
   ref: 'ecfddae2f1738d7f917154a81fbce04aca56cdd1',
