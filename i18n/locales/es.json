@@ -27,7 +27,7 @@
       "playerName": "Nombre del jugador",
       "classes": "Clase",
       "background": "Trasfondo",
-      "race": "Raza",
+      "species": "Especie",
       "alignment": "Alineamiento",
       "alignmentPlaceholder": "Selecciona un alineamiento",
       "submit": "Guardar"

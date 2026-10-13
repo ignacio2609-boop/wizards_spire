@@ -20,6 +20,10 @@ export default defineNuxtConfig({
     ],
   },
   css: ['~/assets/css/global.css'],
+  typescript: {
+    // Node-side scripts (SRD import) aren't covered by any of Nuxt's generated tsconfigs
+    nodeTsConfig: { include: ['../scripts/**/*'] },
+  },
   nitro: {
     publicAssets: [
       {

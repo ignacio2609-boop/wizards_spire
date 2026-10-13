@@ -6,7 +6,7 @@ const createEmptyConcept = (): CharacterConcept => ({
   playerName: '',
   classes: [],
   background: '',
-  race: '',
+  species: '',
   alignment: '',
 });
 

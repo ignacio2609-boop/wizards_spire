@@ -1,0 +1,75 @@
+[
+  {
+    "id": "dragonborn",
+    "name": "Dragonborn",
+    "sizes": [
+      "medium"
+    ],
+    "speed": 30
+  },
+  {
+    "id": "dwarf",
+    "name": "Dwarf",
+    "sizes": [
+      "medium"
+    ],
+    "speed": 30
+  },
+  {
+    "id": "elf",
+    "name": "Elf",
+    "sizes": [
+      "medium"
+    ],
+    "speed": 30
+  },
+  {
+    "id": "gnome",
+    "name": "Gnome",
+    "sizes": [
+      "small"
+    ],
+    "speed": 30
+  },
+  {
+    "id": "goliath",
+    "name": "Goliath",
+    "sizes": [
+      "medium"
+    ],
+    "speed": 35
+  },
+  {
+    "id": "halfling",
+    "name": "Halfling",
+    "sizes": [
+      "small"
+    ],
+    "speed": 30
+  },
+  {
+    "id": "human",
+    "name": "Human",
+    "sizes": [
+      "medium"
+    ],
+    "speed": 30
+  },
+  {
+    "id": "orc",
+    "name": "Orc",
+    "sizes": [
+      "medium"
+    ],
+    "speed": 30
+  },
+  {
+    "id": "tiefling",
+    "name": "Tiefling",
+    "sizes": [
+      "small",
+      "medium"
+    ],
+    "speed": 30
+  }
+]

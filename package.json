@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
-    "type-check": "nuxt typecheck"
+    "type-check": "nuxt typecheck",
+    "srd:import": "node scripts/srd/import.ts"
   },
   "dependencies": {
     "@3d-dice/dice-box": "1.1.4",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.3",
+    "@types/node": "^22.20.5",
     "daisyui": "5.7.22",
     "eslint": "10.9.0",
     "eslint-config-prettier": "10.1.8",

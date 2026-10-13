@@ -1,0 +1,186 @@
+[
+  {
+    "id": "barbarian",
+    "name": "Barbarian",
+    "hitDie": 12,
+    "primaryAbility": {
+      "abilities": [
+        "str"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "str",
+      "con"
+    ]
+  },
+  {
+    "id": "bard",
+    "name": "Bard",
+    "hitDie": 8,
+    "primaryAbility": {
+      "abilities": [
+        "cha"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "dex",
+      "cha"
+    ]
+  },
+  {
+    "id": "cleric",
+    "name": "Cleric",
+    "hitDie": 8,
+    "primaryAbility": {
+      "abilities": [
+        "wis"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "wis",
+      "cha"
+    ]
+  },
+  {
+    "id": "druid",
+    "name": "Druid",
+    "hitDie": 8,
+    "primaryAbility": {
+      "abilities": [
+        "wis"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "int",
+      "wis"
+    ]
+  },
+  {
+    "id": "fighter",
+    "name": "Fighter",
+    "hitDie": 10,
+    "primaryAbility": {
+      "abilities": [
+        "str",
+        "dex"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "str",
+      "con"
+    ]
+  },
+  {
+    "id": "monk",
+    "name": "Monk",
+    "hitDie": 8,
+    "primaryAbility": {
+      "abilities": [
+        "dex",
+        "wis"
+      ],
+      "choose": 2
+    },
+    "savingThrowProficiencies": [
+      "str",
+      "dex"
+    ]
+  },
+  {
+    "id": "paladin",
+    "name": "Paladin",
+    "hitDie": 10,
+    "primaryAbility": {
+      "abilities": [
+        "str",
+        "cha"
+      ],
+      "choose": 2
+    },
+    "savingThrowProficiencies": [
+      "wis",
+      "cha"
+    ]
+  },
+  {
+    "id": "ranger",
+    "name": "Ranger",
+    "hitDie": 10,
+    "primaryAbility": {
+      "abilities": [
+        "dex",
+        "wis"
+      ],
+      "choose": 2
+    },
+    "savingThrowProficiencies": [
+      "str",
+      "dex"
+    ]
+  },
+  {
+    "id": "rogue",
+    "name": "Rogue",
+    "hitDie": 8,
+    "primaryAbility": {
+      "abilities": [
+        "dex"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "dex",
+      "int"
+    ]
+  },
+  {
+    "id": "sorcerer",
+    "name": "Sorcerer",
+    "hitDie": 6,
+    "primaryAbility": {
+      "abilities": [
+        "cha"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "con",
+      "cha"
+    ]
+  },
+  {
+    "id": "warlock",
+    "name": "Warlock",
+    "hitDie": 8,
+    "primaryAbility": {
+      "abilities": [
+        "cha"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "wis",
+      "cha"
+    ]
+  },
+  {
+    "id": "wizard",
+    "name": "Wizard",
+    "hitDie": 6,
+    "primaryAbility": {
+      "abilities": [
+        "int"
+      ],
+      "choose": 1
+    },
+    "savingThrowProficiencies": [
+      "int",
+      "wis"
+    ]
+  }
+]

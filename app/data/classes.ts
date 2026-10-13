@@ -1,16 +1,5 @@
 import * as v from 'valibot';
-import { characterClassSchema, type CharacterClass } from '~/schemas/character-class';
+import { characterClassSchema, type CharacterClass } from '#shared/schemas/character-class';
+import rawClasses from './srd/classes.json';
 
-const rawClasses = [
-  {
-    id: 'fighter',
-    name: 'Fighter',
-    hitDie: 10,
-    primaryAbility: 'str',
-    savingThrowProficiencies: ['str', 'con'],
-  },
-];
-
-export const classes: CharacterClass[] = rawClasses.map((characterClass) =>
-  v.parse(characterClassSchema, characterClass)
-);
+export const classes: CharacterClass[] = v.parse(v.array(characterClassSchema), rawClasses);

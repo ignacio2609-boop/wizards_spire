@@ -17,6 +17,6 @@ export interface CharacterConcept {
   playerName: string;
   classes: string[];
   background: string;
-  race: string;
+  species: string;
   alignment: Alignment | '';
 }

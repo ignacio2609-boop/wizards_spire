@@ -3,7 +3,7 @@ import { storeToRefs } from 'pinia';
 import { ALIGNMENTS } from '~/types/character';
 import { useCharacterStore } from '~/stores/character';
 import { classes } from '~/data/classes';
-import { races } from '~/data/races';
+import { species } from '~/data/species';
 
 const characterStore = useCharacterStore();
 const { concept } = storeToRefs(characterStore);
@@ -17,7 +17,7 @@ const characterClass = computed({
 
 const onSubmit = () => {
   console.log('Character concept:', structuredClone(toRaw(concept.value)));
-  console.log('SRD data:', { races, classes });
+  console.log('SRD data:', { species, classes });
 };
 </script>
 
@@ -71,13 +71,13 @@ const onSubmit = () => {
 
         <label
           class="label"
-          for="race"
+          for="species"
         >
-          {{ $t('create.form.race') }}
+          {{ $t('create.form.species') }}
         </label>
         <input
-          id="race"
-          v-model="concept.race"
+          id="species"
+          v-model="concept.species"
           type="text"
           class="input w-full"
         />

@@ -2,3 +2,4 @@
 .output
 dist
 pnpm-lock.yaml
+app/data/srd

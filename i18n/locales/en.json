@@ -27,7 +27,7 @@
       "playerName": "Player name",
       "classes": "Class",
       "background": "Background",
-      "race": "Race",
+      "species": "Species",
       "alignment": "Alignment",
       "alignmentPlaceholder": "Select an alignment",
       "submit": "Save"
