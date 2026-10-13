@@ -4,6 +4,7 @@ import { ALIGNMENTS } from '~/types/character';
 import { useCharacterStore } from '~/stores/character';
 import { classes } from '~/data/classes';
 import { species } from '~/data/species';
+import type { SrdCollection } from '~/data/srd-translations';
 
 const characterStore = useCharacterStore();
 const { concept } = storeToRefs(characterStore);
@@ -14,6 +15,18 @@ const characterClass = computed({
     concept.value.classes = value ? [value] : [];
   },
 });
+
+const { locale } = useI18n();
+const srdName = useSrdName();
+
+// Sorted by the localized name, which changes the order (Brujo comes before Clérigo)
+const toOptions = (collection: SrdCollection, entries: { id: string; name: string }[]) =>
+  entries
+    .map((entry) => ({ id: entry.id, label: srdName(collection, entry) }))
+    .sort((a, b) => a.label.localeCompare(b.label, locale.value));
+
+const classOptions = computed(() => toOptions('classes', classes));
+const speciesOptions = computed(() => toOptions('species', species));
 
 const onSubmit = () => {
   console.log('Character concept:', structuredClone(toRaw(concept.value)));
@@ -62,12 +75,25 @@ const onSubmit = () => {
         >
           {{ $t('create.form.classes') }}
         </label>
-        <input
+        <select
           id="character-class"
           v-model="characterClass"
-          type="text"
-          class="input w-full"
-        />
+          class="select w-full"
+        >
+          <option
+            value=""
+            disabled
+          >
+            {{ $t('create.form.classPlaceholder') }}
+          </option>
+          <option
+            v-for="classOption in classOptions"
+            :key="classOption.id"
+            :value="classOption.id"
+          >
+            {{ classOption.label }}
+          </option>
+        </select>
 
         <label
           class="label"
@@ -75,12 +101,25 @@ const onSubmit = () => {
         >
           {{ $t('create.form.species') }}
         </label>
-        <input
+        <select
           id="species"
           v-model="concept.species"
-          type="text"
-          class="input w-full"
-        />
+          class="select w-full"
+        >
+          <option
+            value=""
+            disabled
+          >
+            {{ $t('create.form.speciesPlaceholder') }}
+          </option>
+          <option
+            v-for="speciesOption in speciesOptions"
+            :key="speciesOption.id"
+            :value="speciesOption.id"
+          >
+            {{ speciesOption.label }}
+          </option>
+        </select>
 
         <label
           class="label"

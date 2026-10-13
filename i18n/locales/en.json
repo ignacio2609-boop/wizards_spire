@@ -30,8 +30,10 @@
       "characterName": "Character name",
       "playerName": "Player name",
       "classes": "Class",
+      "classPlaceholder": "Select a class",
       "background": "Background",
       "species": "Species",
+      "speciesPlaceholder": "Select a species",
       "alignment": "Alignment",
       "alignmentPlaceholder": "Select an alignment",
       "submit": "Save"

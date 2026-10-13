@@ -11,6 +11,7 @@ const DATA_SOURCE_URL = 'https://github.com/5e-bits/5e-srd-api';
     <i18n-t
       keypath="common.footer.srdAttribution"
       tag="p"
+      scope="global"
       class="max-w-3xl"
     >
       <template #srdUrl>
@@ -37,6 +38,7 @@ const DATA_SOURCE_URL = 'https://github.com/5e-bits/5e-srd-api';
     <i18n-t
       keypath="common.footer.dataSource"
       tag="p"
+      scope="global"
     >
       <template #source>
         <a

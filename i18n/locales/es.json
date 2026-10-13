@@ -30,8 +30,10 @@
       "characterName": "Nombre del personaje",
       "playerName": "Nombre del jugador",
       "classes": "Clase",
+      "classPlaceholder": "Selecciona una clase",
       "background": "Trasfondo",
       "species": "Especie",
+      "speciesPlaceholder": "Selecciona una especie",
       "alignment": "Alineamiento",
       "alignmentPlaceholder": "Selecciona un alineamiento",
       "submit": "Guardar"
