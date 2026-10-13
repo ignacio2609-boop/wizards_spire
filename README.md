@@ -42,4 +42,12 @@ Dev server at `http://localhost:3000`.
 
 ## License
 
-[MIT](./LICENSE)
+Code: [MIT](./LICENSE).
+
+This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by
+Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is
+licensed under the Creative Commons Attribution 4.0 International License, available at
+https://creativecommons.org/licenses/by/4.0/legalcode.
+
+SRD data is imported from [5e-bits/5e-srd-api](https://github.com/5e-bits/5e-srd-api) (MIT).
+See [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md) for the full notices.
