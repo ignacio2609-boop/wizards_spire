@@ -45,3 +45,23 @@ export const apiClassSchema = v.object({
 });
 
 export type ApiClass = v.InferOutput<typeof apiClassSchema>;
+
+const referenceSchema = v.object({ index: v.string() });
+
+export const apiBackgroundSchema = v.object({
+  index: v.string(),
+  name: v.string(),
+  ability_scores: v.array(abilityScoreRefSchema),
+  feat: v.object({ index: v.string(), note: v.optional(v.string()) }),
+  proficiencies: v.array(referenceSchema),
+  proficiency_choices: v.optional(
+    v.array(
+      v.object({
+        choose: v.number(),
+        from: v.object({ options: v.array(v.object({ item: referenceSchema })) }),
+      })
+    )
+  ),
+});
+
+export type ApiBackground = v.InferOutput<typeof apiBackgroundSchema>;

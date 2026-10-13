@@ -4,15 +4,17 @@ import {
   srdEntryTranslationSchema,
   type SrdEntryTranslation,
 } from '#shared/schemas/srd-translation';
+import { backgrounds } from '~/data/backgrounds';
 import { classes } from '~/data/classes';
 import { species } from '~/data/species';
+import esBackgrounds from '~~/i18n/srd/es/backgrounds.json';
 import esClasses from '~~/i18n/srd/es/classes.json';
 import esSpecies from '~~/i18n/srd/es/species.json';
 
 // Hand-curated from the official Spanish SRD 5.2.1. English is the SRD source language,
 // so it has no translation files: a missing locale, entry or field falls back to it.
 
-const SRD_COLLECTIONS = { species, classes };
+const SRD_COLLECTIONS = { species, classes, backgrounds };
 
 export type SrdCollection = keyof typeof SRD_COLLECTIONS;
 
@@ -33,5 +35,6 @@ export const srdTranslations: Partial<Record<Locale, SrdTranslations>> = {
   es: {
     species: parseTranslations('species', esSpecies),
     classes: parseTranslations('classes', esClasses),
+    backgrounds: parseTranslations('backgrounds', esBackgrounds),
   },
 };

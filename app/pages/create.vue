@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia';
 import { ALIGNMENTS } from '~/types/character';
 import { useCharacterStore } from '~/stores/character';
+import { backgrounds } from '~/data/backgrounds';
 import { classes } from '~/data/classes';
 import { species } from '~/data/species';
 import type { SrdCollection } from '~/data/srd-translations';
@@ -27,10 +28,11 @@ const toOptions = (collection: SrdCollection, entries: { id: string; name: strin
 
 const classOptions = computed(() => toOptions('classes', classes));
 const speciesOptions = computed(() => toOptions('species', species));
+const backgroundOptions = computed(() => toOptions('backgrounds', backgrounds));
 
 const onSubmit = () => {
   console.log('Character concept:', structuredClone(toRaw(concept.value)));
-  console.log('SRD data:', { species, classes });
+  console.log('SRD data:', { species, classes, backgrounds });
 };
 </script>
 
@@ -127,12 +129,25 @@ const onSubmit = () => {
         >
           {{ $t('create.form.background') }}
         </label>
-        <input
+        <select
           id="background"
           v-model="concept.background"
-          type="text"
-          class="input w-full"
-        />
+          class="select w-full"
+        >
+          <option
+            value=""
+            disabled
+          >
+            {{ $t('create.form.backgroundPlaceholder') }}
+          </option>
+          <option
+            v-for="backgroundOption in backgroundOptions"
+            :key="backgroundOption.id"
+            :value="backgroundOption.id"
+          >
+            {{ backgroundOption.label }}
+          </option>
+        </select>
 
         <label
           class="label"

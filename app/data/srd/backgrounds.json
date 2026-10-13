@@ -1,0 +1,85 @@
+[
+  {
+    "id": "acolyte",
+    "name": "Acolyte",
+    "abilityScores": [
+      "int",
+      "wis",
+      "cha"
+    ],
+    "feat": {
+      "id": "magic-initiate",
+      "spellList": "cleric"
+    },
+    "proficiencies": [
+      "skill-insight",
+      "skill-religion",
+      "tool-calligraphers-supplies"
+    ],
+    "proficiencyChoices": []
+  },
+  {
+    "id": "criminal",
+    "name": "Criminal",
+    "abilityScores": [
+      "dex",
+      "con",
+      "int"
+    ],
+    "feat": {
+      "id": "alert"
+    },
+    "proficiencies": [
+      "skill-sleight-of-hand",
+      "skill-stealth",
+      "tool-thieves-tools"
+    ],
+    "proficiencyChoices": []
+  },
+  {
+    "id": "sage",
+    "name": "Sage",
+    "abilityScores": [
+      "con",
+      "int",
+      "wis"
+    ],
+    "feat": {
+      "id": "magic-initiate",
+      "spellList": "wizard"
+    },
+    "proficiencies": [
+      "skill-arcana",
+      "skill-history",
+      "tool-calligraphers-supplies"
+    ],
+    "proficiencyChoices": []
+  },
+  {
+    "id": "soldier",
+    "name": "Soldier",
+    "abilityScores": [
+      "str",
+      "dex",
+      "con"
+    ],
+    "feat": {
+      "id": "savage-attacker"
+    },
+    "proficiencies": [
+      "skill-athletics",
+      "skill-intimidation"
+    ],
+    "proficiencyChoices": [
+      {
+        "choose": 1,
+        "options": [
+          "tool-dice",
+          "tool-dragonchess",
+          "tool-playing-cards",
+          "tool-three-dragon-ante"
+        ]
+      }
+    ]
+  }
+]

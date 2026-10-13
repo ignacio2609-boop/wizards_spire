@@ -32,6 +32,7 @@
       "classes": "Clase",
       "classPlaceholder": "Selecciona una clase",
       "background": "Trasfondo",
+      "backgroundPlaceholder": "Selecciona un trasfondo",
       "species": "Especie",
       "speciesPlaceholder": "Selecciona una especie",
       "alignment": "Alineamiento",
