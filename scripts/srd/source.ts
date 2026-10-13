@@ -1,17 +1,19 @@
 // The import reads the JSON files the 5e-bits API is built from, not the API itself:
-// one request per collection and no rate limit.
+// one request per collection and no rate limit. The data used to live in its own repo
+// (5e-bits/5e-database, archived in 2026-10) and is now a package of the API monorepo.
 // Pinned to a commit so re-running the import is reproducible. Bump it deliberately to
 // pull upstream fixes, then review the diff of app/data/srd/.
 export const SRD_SOURCE = {
-  repo: '5e-bits/5e-database',
-  ref: 'a6212beb4b278917c2cff41c2b04c4ef4f3e0d6f',
+  repo: '5e-bits/5e-srd-api',
+  ref: 'ecfddae2f1738d7f917154a81fbce04aca56cdd1',
+  dataDir: 'packages/5e-database/src',
   ruleset: '2024',
   lang: 'en',
 } as const;
 
 export const fetchCollection = async (collection: string): Promise<unknown> => {
-  const { repo, ref, ruleset, lang } = SRD_SOURCE;
-  const url = `https://raw.githubusercontent.com/${repo}/${ref}/src/${ruleset}/${lang}/5e-SRD-${collection}.json`;
+  const { repo, ref, dataDir, ruleset, lang } = SRD_SOURCE;
+  const url = `https://raw.githubusercontent.com/${repo}/${ref}/${dataDir}/${ruleset}/${lang}/5e-SRD-${collection}.json`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`${url}: ${response.status} ${response.statusText}`);
