@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { ApiBackground } from '../../../scripts/srd/api-schemas.ts';
-import { backgroundPatches } from '../../../scripts/srd/patches.ts';
+import type { ApiBackground } from '~~/scripts/srd/api-schemas.ts';
+import { backgroundPatches } from '~~/scripts/srd/patches.ts';
 
 describe('backgroundPatches', () => {
   it('adds the Wizard spell list to the Sage feat', () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { ApiBackground, ApiClass } from '../../../scripts/srd/api-schemas.ts';
-import { toBackground, toCharacterClass, toSpecies } from '../../../scripts/srd/mappers.ts';
+import type { ApiBackground, ApiClass } from '~~/scripts/srd/api-schemas.ts';
+import { toBackground, toCharacterClass, toSpecies } from '~~/scripts/srd/mappers.ts';
 
 describe('toSpecies', () => {
   it('maps a species with a single size', () => {
