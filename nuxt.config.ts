@@ -21,8 +21,13 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/global.css'],
   typescript: {
+    // Unit tests import app code through Nuxt aliases (test/nuxt is already included by Nuxt)
+    tsConfig: { include: ['../test/unit/**/*'] },
     // Node-side scripts (SRD import) aren't covered by any of Nuxt's generated tsconfigs
-    nodeTsConfig: { include: ['../scripts/**/*'], compilerOptions: { types: ['node'] } },
+    nodeTsConfig: {
+      include: ['../scripts/**/*', '../vitest.config.ts'],
+      compilerOptions: { types: ['node'] },
+    },
   },
   nitro: {
     publicAssets: [

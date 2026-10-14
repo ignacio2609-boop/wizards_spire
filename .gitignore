@@ -9,6 +9,12 @@ dist
 # Node dependencies
 node_modules
 
+# Local project docs
+docs
+
+# Vitest reports and attachments
+.vitest
+
 # Logs
 logs
 *.log

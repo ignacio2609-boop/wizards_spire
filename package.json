@@ -12,6 +12,9 @@
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "type-check": "nuxt typecheck",
+    "test": "vitest",
+    "test:unit": "vitest --project unit",
+    "test:nuxt": "vitest --project nuxt",
     "srd:import": "node scripts/srd/import.ts"
   },
   "dependencies": {
@@ -30,14 +33,18 @@
     "vue-router": "5.2.0"
   },
   "devDependencies": {
+    "@nuxt/test-utils": "4.3.3",
     "@tailwindcss/vite": "4.3.3",
     "@types/node": "22.20.5",
+    "@vue/test-utils": "2.5.1",
     "daisyui": "5.7.22",
     "eslint": "10.9.0",
     "eslint-config-prettier": "10.1.8",
+    "happy-dom": "20.14.6",
     "prettier": "3.9.6",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
+    "vitest": "5.0.4",
     "vue-tsc": "3.3.11"
   }
 }
