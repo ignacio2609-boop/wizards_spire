@@ -19,6 +19,8 @@ export default defineNuxtConfig({
       { code: 'es', file: 'es.json', name: 'Español' },
     ],
   },
+  // Every store is persisted unless it declares persist: false
+  piniaPluginPersistedstate: { auto: true },
   css: ['~/assets/css/global.css'],
   typescript: {
     // Unit tests import app code through Nuxt aliases (test/nuxt is already included by Nuxt)
