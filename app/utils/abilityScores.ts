@@ -89,3 +89,7 @@ export function applyAbilityBonus(scores: AbilityValues, bonus: AbilityValues): 
   }
   return raised;
 }
+
+// Plain hyphen: the sheet fonts have no glyph for the minus sign (U+2212)
+export const formatModifier = (modifier: number): string =>
+  modifier < 0 ? String(modifier) : `+${modifier}`;

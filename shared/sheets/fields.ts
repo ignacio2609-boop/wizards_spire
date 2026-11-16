@@ -7,5 +7,5 @@ export type SheetFields = Readonly<Record<string, SheetFieldKind>>;
 type SheetFieldValue<Kind extends SheetFieldKind> = Kind extends 'checkbox' ? boolean : string;
 
 export type SheetValues<Fields extends SheetFields> = {
-  [Name in keyof Fields]?: SheetFieldValue<Fields[Name]>;
+  -readonly [Name in keyof Fields]?: SheetFieldValue<Fields[Name]>;
 };

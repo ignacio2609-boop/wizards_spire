@@ -40,3 +40,5 @@ export interface CharacterAbilities {
   // May hold a choice made for another background: it only counts while it fits the current one
   backgroundBonus: AbilityValues;
 }
+
+export const STARTING_LEVEL = 1;

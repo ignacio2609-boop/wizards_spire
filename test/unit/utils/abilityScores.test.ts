@@ -7,6 +7,7 @@ import {
   assignedScores,
   assignScore,
   createEmptyAssignment,
+  formatModifier,
   isValidBackgroundBonus,
   proficiencyBonus,
   savingThrowBonus,
@@ -172,5 +173,15 @@ describe('applyAbilityBonus', () => {
 
   it('gives no score to an ability that has none yet', () => {
     expect(applyAbilityBonus({}, { str: 2 })).toEqual({});
+  });
+});
+
+describe('formatModifier', () => {
+  it.each([
+    [2, '+2'],
+    [0, '+0'],
+    [-1, '-1'],
+  ])('writes %i as %s', (modifier, text) => {
+    expect(formatModifier(modifier)).toBe(text);
   });
 });

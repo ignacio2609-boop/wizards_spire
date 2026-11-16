@@ -61,4 +61,25 @@ describe('useCharacterSheet', () => {
     expect(form.getTextField('background').getText()).toBe('Soldado');
     expect(form.getTextField('alignment').getText()).toBe('Legal Bueno');
   });
+
+  it('fills the ability scores, modifiers and saving throws of the character', async () => {
+    const store = useCharacterStore();
+    Object.assign(store.concept, { classes: ['wizard'], background: 'acolyte' });
+    store.assignAbilityScore('int', 0);
+    store.assignAbilityScore('str', 5);
+    store.abilities.backgroundBonus = { int: 2, wis: 1 };
+
+    const filled = await (await useSheet()).buildFilledSheet();
+
+    const form = (await PDFDocument.load(filled)).getForm();
+    expect(form.getTextField('int').getText()).toBe('17');
+    expect(form.getTextField('intMod').getText()).toBe('+3');
+    expect(form.getTextField('intSave').getText()).toBe('+5');
+    expect(form.getCheckBox('intSaveProf').isChecked()).toBe(true);
+    expect(form.getTextField('str').getText()).toBe('8');
+    expect(form.getTextField('strMod').getText()).toBe('-1');
+    expect(form.getTextField('strSave').getText()).toBe('-1');
+    expect(form.getCheckBox('strSaveProf').isChecked()).toBe(false);
+    expect(form.getTextField('dex').getText()).toBeUndefined();
+  });
 });

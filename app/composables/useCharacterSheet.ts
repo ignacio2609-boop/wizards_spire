@@ -3,11 +3,12 @@ import { GENERIC_SHEET_FIELDS } from '#shared/sheets/generic';
 import { resolveSheetLocale, sheetTemplatePath } from '#shared/sheets/templates';
 import { srdNameById } from '~/data/srd-translations';
 import { useCharacterStore } from '~/stores/character';
+import { STARTING_LEVEL } from '~/types/character';
 import type { SheetLabels } from '~/utils/genericSheet';
 
 export const useCharacterSheet = () => {
   const { locale, t, loadLocaleMessages } = useI18n();
-  const { concept } = storeToRefs(useCharacterStore());
+  const { concept, abilityScores, savingThrowProficiencies } = storeToRefs(useCharacterStore());
   const { baseURL } = useRuntimeConfig().app;
 
   const sheetLocale = computed(() => resolveSheetLocale('generic', locale.value));
@@ -32,7 +33,15 @@ export const useCharacterSheet = () => {
     return fillSheet(
       template,
       GENERIC_SHEET_FIELDS,
-      conceptToGenericSheetValues(concept.value, labels)
+      characterToGenericSheetValues(
+        {
+          concept: concept.value,
+          level: STARTING_LEVEL,
+          abilityScores: abilityScores.value,
+          savingThrowProficiencies: savingThrowProficiencies.value,
+        },
+        labels
+      )
     );
   };
 
