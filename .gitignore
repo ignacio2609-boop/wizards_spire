@@ -12,6 +12,9 @@ node_modules
 # Local project docs
 docs
 
+# Local sheet template builders
+scripts/sheets
+
 # Vitest reports and attachments
 .vitest
 
