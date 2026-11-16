@@ -31,3 +31,12 @@ export type AbilityValues = Partial<Record<StatKey, number>>;
 
 // Where each ability's score sits in the method's pool of six scores; null until assigned
 export type AbilityAssignment = Record<StatKey, number | null>;
+
+export interface CharacterAbilities {
+  method: AbilityMethod;
+  // Empty until the player rolls; kept when the method changes
+  rolledScores: number[];
+  assignment: AbilityAssignment;
+  // May hold a choice made for another background: it only counts while it fits the current one
+  backgroundBonus: AbilityValues;
+}
