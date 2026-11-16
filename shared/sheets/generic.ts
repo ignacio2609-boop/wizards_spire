@@ -1,8 +1,6 @@
 import type { SheetFields, SheetValues } from './fields.ts';
 
-// First sheet family: a basic one-page sheet.
 export const GENERIC_SHEET_FIELDS = {
-  // Concept
   characterName: 'text',
   playerName: 'text',
   classes: 'text',
@@ -10,8 +8,6 @@ export const GENERIC_SHEET_FIELDS = {
   background: 'text',
   alignment: 'text',
 
-  // Abilities: score, modifier, saving throw bonus and saving throw proficiency.
-  // The app hands over the score and the modifier separately.
   str: 'text',
   strMod: 'text',
   strSave: 'text',
