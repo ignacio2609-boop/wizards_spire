@@ -18,6 +18,7 @@ export default defineNuxtConfig({
       { code: 'en', file: 'en.json', name: 'English' },
       { code: 'es', file: 'es.json', name: 'Español' },
     ],
+    detectBrowserLanguage: { redirectOn: 'no prefix', alwaysRedirect: true },
   },
   // Every store is persisted unless it declares persist: false
   piniaPluginPersistedstate: { auto: true },
