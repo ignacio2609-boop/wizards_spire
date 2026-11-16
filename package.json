@@ -26,6 +26,7 @@
     "@vueuse/core": "14.4.0",
     "@vueuse/nuxt": "14.4.0",
     "nuxt": "4.5.2",
+    "pdf-lib": "1.17.1",
     "pinia": "4.0.3",
     "pinia-plugin-persistedstate": "4.7.1",
     "valibot": "1.4.2",
