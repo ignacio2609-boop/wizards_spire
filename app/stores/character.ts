@@ -64,6 +64,7 @@ export const useCharacterStore = defineStore('character', {
         throw new RangeError(`Expected ${ABILITY_SCORE_COUNT} rolled scores, got ${scores.length}`);
       }
       this.abilities.rolledScores = scores;
+      this.abilities.assignment = createEmptyAssignment();
     },
   },
 });

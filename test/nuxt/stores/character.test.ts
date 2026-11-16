@@ -44,11 +44,22 @@ describe('useCharacterStore', () => {
     it('uses the rolled scores on the rolled method', () => {
       const store = useCharacterStore();
       store.abilities.method = 'rolled';
-      store.assignAbilityScore('str', 0);
-
       store.setRolledScores([17, 9, 12, 12, 7, 14]);
 
+      store.assignAbilityScore('str', 0);
+
       expect(store.abilityScores).toEqual({ str: 17 });
+    });
+
+    it('clears the assignment when the player rolls again', () => {
+      const store = useCharacterStore();
+      store.abilities.method = 'rolled';
+      store.setRolledScores([17, 9, 12, 12, 7, 14]);
+      store.assignAbilityScore('str', 0);
+
+      store.setRolledScores([10, 11, 12, 13, 14, 15]);
+
+      expect(store.abilityScores).toEqual({});
     });
 
     it('keeps the rolled scores and the assignment when the method changes', () => {
