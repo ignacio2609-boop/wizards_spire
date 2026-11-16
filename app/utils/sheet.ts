@@ -4,7 +4,7 @@ export async function fillSheet<Fields extends SheetFields>(
   template: Uint8Array | ArrayBuffer,
   fields: Fields,
   values: SheetValues<Fields>
-): Promise<Uint8Array> {
+): Promise<Uint8Array<ArrayBuffer>> {
   const { PDFDocument } = await import('pdf-lib');
   const pdf = await PDFDocument.load(template);
   const form = pdf.getForm();
@@ -22,5 +22,12 @@ export async function fillSheet<Fields extends SheetFields>(
     }
   }
 
-  return pdf.save();
+  return (await pdf.save()) as Uint8Array<ArrayBuffer>;
+}
+
+const DEFAULT_SHEET_FILE_NAME = 'character-sheet';
+
+export function sheetFileName(characterName: string): string {
+  const name = characterName.replace(/[\\/:*?"<>|]/g, '').trim();
+  return `${name || DEFAULT_SHEET_FILE_NAME}.pdf`;
 }

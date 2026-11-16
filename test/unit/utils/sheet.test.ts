@@ -4,7 +4,7 @@ import { PDFDocument } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
 import { GENERIC_SHEET_FIELDS } from '~~/shared/sheets/generic.ts';
 import { sheetTemplatePath } from '~~/shared/sheets/templates.ts';
-import { fillSheet } from '~/utils/sheet.ts';
+import { fillSheet, sheetFileName } from '~/utils/sheet.ts';
 
 const loadTemplate = () =>
   readFile(join(process.cwd(), 'public', sheetTemplatePath('generic', 'es')));
@@ -40,5 +40,19 @@ describe('fillSheet', () => {
     await expect(fillSheet(await loadTemplate(), fields, { missing: 'x' })).rejects.toThrow(
       /missing/
     );
+  });
+});
+
+describe('sheetFileName', () => {
+  it('names the file after the character', () => {
+    expect(sheetFileName('Íñigo Martín')).toBe('Íñigo Martín.pdf');
+  });
+
+  it('drops the characters a file name cannot have', () => {
+    expect(sheetFileName('¿Quién? "El Rojo" <3/4>')).toBe('¿Quién El Rojo 34.pdf');
+  });
+
+  it('uses a generic name when the character has none', () => {
+    expect(sheetFileName('  ')).toBe('character-sheet.pdf');
   });
 });

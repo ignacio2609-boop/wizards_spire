@@ -38,3 +38,8 @@ export const srdTranslations: Partial<Record<Locale, SrdTranslations>> = {
     backgrounds: parseTranslations('backgrounds', esBackgrounds),
   },
 };
+
+export const srdNameById = (locale: string, collection: SrdCollection, id: string): string =>
+  srdTranslations[locale as Locale]?.[collection][id]?.name ??
+  SRD_COLLECTIONS[collection].find((entry) => entry.id === id)?.name ??
+  id;

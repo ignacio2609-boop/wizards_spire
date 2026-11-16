@@ -3,7 +3,11 @@ import { join } from 'node:path';
 import { PDFCheckBox, PDFDocument, PDFTextField } from 'pdf-lib';
 import type { PDFField } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
-import { SHEET_TEMPLATES, sheetTemplatePath } from '~~/shared/sheets/templates.ts';
+import {
+  resolveSheetLocale,
+  SHEET_TEMPLATES,
+  sheetTemplatePath,
+} from '~~/shared/sheets/templates.ts';
 import type { SheetFamily } from '~~/shared/sheets/templates.ts';
 
 const PUBLIC_DIR = join(process.cwd(), 'public');
@@ -46,5 +50,15 @@ describe('SHEET_TEMPLATES', () => {
       .filter((path) => !declaredTemplates.some((template) => template.path === path));
 
     expect(undeclared).toEqual([]);
+  });
+});
+
+describe('resolveSheetLocale', () => {
+  it('keeps a locale the family has a template for', () => {
+    expect(resolveSheetLocale('generic', 'es')).toBe('es');
+  });
+
+  it('falls back to English for a locale without a template', () => {
+    expect(resolveSheetLocale('generic', 'fr')).toBe('en');
   });
 });
