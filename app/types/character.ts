@@ -1,3 +1,5 @@
+import type { StatKey } from '#shared/types/ability';
+
 export const ALIGNMENTS = [
   'lawfulGood',
   'neutralGood',
@@ -20,3 +22,12 @@ export interface CharacterConcept {
   species: string;
   alignment: Alignment | '';
 }
+
+export const ABILITY_METHODS = ['standardArray', 'rolled'] as const;
+
+export type AbilityMethod = (typeof ABILITY_METHODS)[number];
+
+export type AbilityValues = Partial<Record<StatKey, number>>;
+
+// Where each ability's score sits in the method's pool of six scores; null until assigned
+export type AbilityAssignment = Record<StatKey, number | null>;
