@@ -1,6 +1,9 @@
 {
   "common": {
     "appName": "Wizard's Spire",
+    "language": {
+      "label": "Language"
+    },
     "alignments": {
       "lawfulGood": "Lawful Good",
       "neutralGood": "Neutral Good",

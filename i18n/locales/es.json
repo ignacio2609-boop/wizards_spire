@@ -1,6 +1,9 @@
 {
   "common": {
     "appName": "La Torre del Mago",
+    "language": {
+      "label": "Idioma"
+    },
     "alignments": {
       "lawfulGood": "Legal Bueno",
       "neutralGood": "Neutral Bueno",

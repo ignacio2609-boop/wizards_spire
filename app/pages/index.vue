@@ -29,13 +29,13 @@ import { ArrowRight, Dices } from '@lucide/vue';
         {{ $t('home.hero.description') }}
       </p>
 
-      <NuxtLink
+      <NuxtLinkLocale
         to="/create"
         class="btn btn-primary btn-lg mt-10 gap-2"
       >
         {{ $t('home.hero.cta') }}
         <ArrowRight class="size-5" />
-      </NuxtLink>
+      </NuxtLinkLocale>
     </div>
   </div>
 </template>
