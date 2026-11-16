@@ -2,7 +2,7 @@ import type { SheetFields } from './fields.ts';
 import { GENERIC_SHEET_FIELDS } from './generic.ts';
 
 export const SHEET_TEMPLATES = {
-  generic: { fields: GENERIC_SHEET_FIELDS, locales: ['es'] },
+  generic: { fields: GENERIC_SHEET_FIELDS, locales: ['es', 'en'] },
 } as const satisfies Record<string, { fields: SheetFields; locales: readonly string[] }>;
 
 export type SheetFamily = keyof typeof SHEET_TEMPLATES;

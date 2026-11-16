@@ -16,7 +16,7 @@
     "test:unit": "vitest --project unit",
     "test:nuxt": "vitest --project nuxt",
     "srd:import": "node scripts/srd/import.ts",
-    "sheets:build": "node scripts/sheets/build-generic-es.ts"
+    "sheets:build": "node scripts/sheets/build-generic.ts"
   },
   "dependencies": {
     "@3d-dice/dice-box": "1.1.4",
