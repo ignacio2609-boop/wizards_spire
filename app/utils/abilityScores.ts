@@ -80,6 +80,29 @@ export function isValidBackgroundBonus(
   return BACKGROUND_BONUS_SPREADS.includes(spread);
 }
 
+// Every valid way to spread a background's bonus over the abilities it raises
+export function backgroundBonusOptions(backgroundAbilities: readonly StatKey[]): AbilityValues[] {
+  if (backgroundAbilities.length === 0) return [];
+
+  const options: AbilityValues[] = [];
+  for (const raisedByTwo of backgroundAbilities) {
+    for (const raisedByOne of backgroundAbilities) {
+      if (raisedByOne === raisedByTwo) continue;
+      const option: AbilityValues = {};
+      option[raisedByTwo] = 2;
+      option[raisedByOne] = 1;
+      options.push(option);
+    }
+  }
+
+  const oneEach: AbilityValues = {};
+  for (const stat of backgroundAbilities) oneEach[stat] = 1;
+  return [...options, oneEach];
+}
+
+export const isSameAbilityBonus = (a: AbilityValues, b: AbilityValues): boolean =>
+  STAT_KEYS.every((stat) => (a[stat] ?? 0) === (b[stat] ?? 0));
+
 export function applyAbilityBonus(scores: AbilityValues, bonus: AbilityValues): AbilityValues {
   const raised: AbilityValues = {};
   for (const stat of STAT_KEYS) {

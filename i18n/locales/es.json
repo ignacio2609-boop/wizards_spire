@@ -15,6 +15,14 @@
       "neutralEvil": "Neutral Malvado",
       "chaoticEvil": "Caótico Malvado"
     },
+    "abilities": {
+      "str": "Fuerza",
+      "dex": "Destreza",
+      "con": "Constitución",
+      "int": "Inteligencia",
+      "wis": "Sabiduría",
+      "cha": "Carisma"
+    },
     "footer": {
       "srdAttribution": "Esta obra incluye material procedente del documento de referencia del sistema 5.2.1 (“SRD 5.2.1”) de Wizards of the Coast LLC, disponible en {srdUrl}. La licencia sobre el SRD 5.2.1 se concede de acuerdo con la licencia internacional de atribución/reconocimiento 4.0 de Creative Commons, disponible en {licenseUrl}.",
       "dataSource": "Datos del SRD obtenidos de {source} (MIT)."
@@ -43,6 +51,35 @@
       "downloadSheet": "Descargar ficha",
       "downloadEmptySheet": "Descargar ficha vacía",
       "downloadError": "No se ha podido generar la ficha. Inténtalo de nuevo."
+    },
+    "abilities": {
+      "title": "Características",
+      "method": {
+        "label": "Método",
+        "standardArray": "Valores estándar",
+        "rolled": "Tirar dados"
+      },
+      "roll": {
+        "hint": "Seis tiradas de 4d6. En cada una se descarta el dado más bajo.",
+        "button": "Tirar los dados",
+        "again": "Volver a tirar",
+        "error": "No se han podido tirar los dados. Inténtalo de nuevo."
+      },
+      "assignment": {
+        "ability": "Característica",
+        "score": "Valor",
+        "background": "Trasfondo",
+        "total": "Total",
+        "modifier": "Mod.",
+        "unassigned": "Sin repartir: {scores}",
+        "swapHint": "Si eliges un valor que ya está en uso, se intercambia con el que tenías.",
+        "rollFirst": "Tira los dados para obtener los valores que vas a repartir."
+      },
+      "backgroundBonus": {
+        "label": "Mejora del trasfondo",
+        "placeholder": "Selecciona cómo repartirla",
+        "noBackground": "Elige un trasfondo para repartir su mejora."
+      }
     }
   }
 }

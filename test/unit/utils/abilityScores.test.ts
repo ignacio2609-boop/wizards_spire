@@ -6,8 +6,10 @@ import {
   applyAbilityBonus,
   assignedScores,
   assignScore,
+  backgroundBonusOptions,
   createEmptyAssignment,
   formatModifier,
+  isSameAbilityBonus,
   isValidBackgroundBonus,
   proficiencyBonus,
   savingThrowBonus,
@@ -155,6 +157,46 @@ describe('isValidBackgroundBonus', () => {
     ['an ability the background does not raise', { wis: 2, str: 1 }],
   ])('rejects %s', (_case, bonus) => {
     expect(isValidBackgroundBonus(bonus, abilities)).toBe(false);
+  });
+});
+
+describe('backgroundBonusOptions', () => {
+  it('lists every +2 and +1 pair and then +1 to all three', () => {
+    expect(backgroundBonusOptions(['int', 'wis', 'cha'])).toEqual([
+      { int: 2, wis: 1 },
+      { int: 2, cha: 1 },
+      { wis: 2, int: 1 },
+      { wis: 2, cha: 1 },
+      { cha: 2, int: 1 },
+      { cha: 2, wis: 1 },
+      { int: 1, wis: 1, cha: 1 },
+    ]);
+  });
+
+  it('only offers valid bonuses', () => {
+    const abilities = ['str', 'dex', 'con'] as const;
+
+    const options = backgroundBonusOptions(abilities);
+
+    expect(options.every((option) => isValidBackgroundBonus(option, abilities))).toBe(true);
+  });
+
+  it('offers nothing without background abilities', () => {
+    expect(backgroundBonusOptions([])).toEqual([]);
+  });
+});
+
+describe('isSameAbilityBonus', () => {
+  it('matches bonuses that raise the same abilities by the same amount', () => {
+    expect(isSameAbilityBonus({ wis: 2, int: 1 }, { int: 1, wis: 2 })).toBe(true);
+  });
+
+  it('tells apart bonuses that swap the amounts', () => {
+    expect(isSameAbilityBonus({ wis: 2, int: 1 }, { wis: 1, int: 2 })).toBe(false);
+  });
+
+  it('tells a partial bonus from a complete one', () => {
+    expect(isSameAbilityBonus({ wis: 2 }, { wis: 2, int: 1 })).toBe(false);
   });
 });
 

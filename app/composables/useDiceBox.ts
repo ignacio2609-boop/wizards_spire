@@ -1,4 +1,5 @@
 import type DiceBox from '@3d-dice/dice-box';
+import type { DieResult } from '@3d-dice/dice-box';
 import { DICE_BOX_ASSET_PATH } from '#shared/dice-box';
 import type { DiceNotation, DieRoll, DieSides } from '~/types/dice';
 
@@ -59,7 +60,7 @@ const detach = (element: HTMLElement) => {
   void diceBoxPromise?.then((diceBox) => diceBox.canvas?.remove());
 };
 
-const roll = async (notation: DiceNotation | DiceNotation[]): Promise<DieRoll[]> => {
+const rollDice = async (notation: DiceNotation | DiceNotation[]): Promise<DieResult[]> => {
   if (!tray) throw new Error('useDiceBox: mount a <DiceTray> before rolling');
   // Each roll() clears the previous one, whose promise then never settles
   if (isRolling.value) throw new Error('useDiceBox: a roll is already in progress');
@@ -67,11 +68,29 @@ const roll = async (notation: DiceNotation | DiceNotation[]): Promise<DieRoll[]>
   isRolling.value = true;
   try {
     const diceBox = await getDiceBox();
-    const results = await diceBox.roll(notation);
-    return results.map(({ sides, value }) => ({ sides: Number(sides) as DieSides, value }));
+    return await diceBox.roll(notation);
   } finally {
     isRolling.value = false;
   }
+};
+
+const toDieRoll = ({ sides, value }: DieResult): DieRoll => ({
+  sides: Number(sides) as DieSides,
+  value,
+});
+
+const roll = async (notation: DiceNotation | DiceNotation[]): Promise<DieRoll[]> =>
+  (await rollDice(notation)).map(toDieRoll);
+
+// All the notations are thrown at once; the dice come back split by notation, in the same order
+const rollGroups = async (notations: DiceNotation[]): Promise<DieRoll[][]> => {
+  const groups = new Map<number, DieRoll[]>();
+  for (const result of await rollDice(notations)) {
+    const group = groups.get(result.groupId) ?? [];
+    group.push(toDieRoll(result));
+    groups.set(result.groupId, group);
+  }
+  return [...groups.values()];
 };
 
 const clear = async () => {
@@ -87,5 +106,6 @@ export const useDiceBox = () => ({
   detach,
   resize,
   roll,
+  rollGroups,
   clear,
 });

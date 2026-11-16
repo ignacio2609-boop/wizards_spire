@@ -51,7 +51,7 @@ const onSubmit = async () => {
 <template>
   <div class="bg-base-100 flex min-h-screen items-center justify-center px-6 py-16">
     <form
-      class="w-full max-w-md"
+      class="flex w-full max-w-md flex-col gap-6"
       @submit.prevent="onSubmit"
     >
       <fieldset class="fieldset bg-base-200 border-base-300 w-full rounded-box border p-6">
@@ -186,10 +186,14 @@ const onSubmit = async () => {
             {{ $t(`common.alignments.${alignment}`) }}
           </option>
         </select>
+      </fieldset>
 
+      <AbilityScoresFieldset />
+
+      <div class="flex flex-col gap-2">
         <button
           type="submit"
-          class="btn btn-primary mt-4"
+          class="btn btn-primary"
           :disabled="isDownloading"
         >
           <span
@@ -208,11 +212,11 @@ const onSubmit = async () => {
         <div
           v-if="downloadFailed"
           role="alert"
-          class="alert alert-error mt-2"
+          class="alert alert-error"
         >
           {{ $t('create.form.downloadError') }}
         </div>
-      </fieldset>
+      </div>
     </form>
   </div>
 </template>

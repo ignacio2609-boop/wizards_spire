@@ -15,6 +15,14 @@
       "neutralEvil": "Neutral Evil",
       "chaoticEvil": "Chaotic Evil"
     },
+    "abilities": {
+      "str": "Strength",
+      "dex": "Dexterity",
+      "con": "Constitution",
+      "int": "Intelligence",
+      "wis": "Wisdom",
+      "cha": "Charisma"
+    },
     "footer": {
       "srdAttribution": "This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at {srdUrl}. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at {licenseUrl}.",
       "dataSource": "SRD data from {source} (MIT)."
@@ -43,6 +51,35 @@
       "downloadSheet": "Download sheet",
       "downloadEmptySheet": "Download empty sheet",
       "downloadError": "The sheet could not be generated. Please try again."
+    },
+    "abilities": {
+      "title": "Ability scores",
+      "method": {
+        "label": "Method",
+        "standardArray": "Standard array",
+        "rolled": "Roll dice"
+      },
+      "roll": {
+        "hint": "Six rolls of 4d6. The lowest die of each roll is dropped.",
+        "button": "Roll the dice",
+        "again": "Roll again",
+        "error": "The dice could not be rolled. Please try again."
+      },
+      "assignment": {
+        "ability": "Ability",
+        "score": "Score",
+        "background": "Background",
+        "total": "Total",
+        "modifier": "Mod.",
+        "unassigned": "Unassigned: {scores}",
+        "swapHint": "Picking a score that is already in use swaps it with the one you had.",
+        "rollFirst": "Roll the dice to get the scores to assign."
+      },
+      "backgroundBonus": {
+        "label": "Background increase",
+        "placeholder": "Select how to spread it",
+        "noBackground": "Choose a background to spread its increase."
+      }
     }
   }
 }
