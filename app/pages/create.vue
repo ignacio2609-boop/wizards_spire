@@ -30,9 +30,21 @@ const classOptions = computed(() => toOptions('classes', classes));
 const speciesOptions = computed(() => toOptions('species', species));
 const backgroundOptions = computed(() => toOptions('backgrounds', backgrounds));
 
-const onSubmit = () => {
-  console.log('Character concept:', structuredClone(toRaw(concept.value)));
-  console.log('SRD data:', { species, classes, backgrounds });
+const { emptySheetUrl, downloadFilledSheet } = useCharacterSheet();
+const isDownloading = ref(false);
+const downloadFailed = ref(false);
+
+const onSubmit = async () => {
+  isDownloading.value = true;
+  downloadFailed.value = false;
+  try {
+    await downloadFilledSheet();
+  } catch (error) {
+    console.error(error);
+    downloadFailed.value = true;
+  } finally {
+    isDownloading.value = false;
+  }
 };
 </script>
 
@@ -178,9 +190,28 @@ const onSubmit = () => {
         <button
           type="submit"
           class="btn btn-primary mt-4"
+          :disabled="isDownloading"
         >
-          {{ $t('create.form.submit') }}
+          <span
+            v-if="isDownloading"
+            class="loading loading-spinner"
+          />
+          {{ $t('create.form.downloadSheet') }}
         </button>
+        <a
+          :href="emptySheetUrl"
+          download
+          class="btn btn-ghost"
+        >
+          {{ $t('create.form.downloadEmptySheet') }}
+        </a>
+        <div
+          v-if="downloadFailed"
+          role="alert"
+          class="alert alert-error mt-2"
+        >
+          {{ $t('create.form.downloadError') }}
+        </div>
       </fieldset>
     </form>
   </div>

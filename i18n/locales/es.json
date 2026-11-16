@@ -37,7 +37,9 @@
       "speciesPlaceholder": "Selecciona una especie",
       "alignment": "Alineamiento",
       "alignmentPlaceholder": "Selecciona un alineamiento",
-      "submit": "Guardar"
+      "downloadSheet": "Descargar ficha",
+      "downloadEmptySheet": "Descargar ficha vacía",
+      "downloadError": "No se ha podido generar la ficha. Inténtalo de nuevo."
     }
   }
 }

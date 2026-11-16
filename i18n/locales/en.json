@@ -37,7 +37,9 @@
       "speciesPlaceholder": "Select a species",
       "alignment": "Alignment",
       "alignmentPlaceholder": "Select an alignment",
-      "submit": "Save"
+      "downloadSheet": "Download sheet",
+      "downloadEmptySheet": "Download empty sheet",
+      "downloadError": "The sheet could not be generated. Please try again."
     }
   }
 }
