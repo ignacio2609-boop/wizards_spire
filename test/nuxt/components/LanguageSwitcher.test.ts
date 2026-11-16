@@ -1,5 +1,5 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { Locale } from 'vue-i18n';
 import LanguageSwitcher from '~/components/LanguageSwitcher.vue';
 
@@ -14,13 +14,18 @@ describe('LanguageSwitcher', () => {
   it('lists every locale under its own name', async () => {
     const wrapper = await mountSuspended(LanguageSwitcher);
 
-    expect(wrapper.findAll('a').map((link) => link.text())).toEqual(['English', 'Español']);
+    expect(wrapper.findAll('li button').map((option) => option.text())).toEqual([
+      'English',
+      'Español',
+    ]);
   });
 
-  it('links each locale to its version of the current page', async () => {
+  it('changes the locale to the one chosen', async () => {
     const wrapper = await mountSuspended(LanguageSwitcher);
 
-    expect(wrapper.findAll('a').map((link) => link.attributes('href'))).toEqual(['/', '/es']);
+    await wrapper.find('li button[lang="es"]').trigger('click');
+
+    await vi.waitFor(() => expect(wrapper.find('[role="button"]').text()).toBe('Español'));
   });
 
   it('marks the active locale', async () => {

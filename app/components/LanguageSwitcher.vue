@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import { Check, Languages } from '@lucide/vue';
+import type { Locale } from 'vue-i18n';
 
-const { locale, locales } = useI18n();
-const switchLocalePath = useSwitchLocalePath();
+const { locale, locales, setLocale } = useI18n();
 
 const currentName = computed(
   () => locales.value.find(({ code }) => code === locale.value)?.name ?? locale.value
 );
 
-// daisyUI's dropdown stays open while it holds focus, and the layout survives the navigation
-const closeMenu = () => {
+// daisyUI's dropdown stays open while it holds focus
+const chooseLocale = async (code: Locale) => {
   if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+  await setLocale(code);
 };
 </script>
 
@@ -33,20 +34,19 @@ const closeMenu = () => {
         v-for="{ code, name } in locales"
         :key="code"
       >
-        <NuxtLink
-          :to="switchLocalePath(code)"
+        <button
+          type="button"
           :lang="code"
-          :hreflang="code"
           :aria-current="code === locale ? 'true' : undefined"
           class="justify-between"
-          @click="closeMenu"
+          @click="chooseLocale(code)"
         >
           {{ name }}
           <Check
             v-if="code === locale"
             class="size-4"
           />
-        </NuxtLink>
+        </button>
       </li>
     </ul>
   </div>
