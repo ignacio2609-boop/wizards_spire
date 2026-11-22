@@ -11,7 +11,7 @@ free, in the browser, no installation required.
 
 ## Project status
 
-Version **0.0.0**: the foundation. The stack, the project structure, the tests and the
+Version **0.0.1**: the foundation. The stack, the project structure, the tests and the
 deployment are in place, with a first slice of character creation:
 
 - Character concept: name, class, species, background and alignment.
@@ -42,7 +42,7 @@ The character is kept in the browser. There are no accounts and no backend.
 | Game data    | SRD 5.2.1, imported at build time from `5e-bits/5e-srd-api` into local JSON |
 | Tests        | Vitest, `@nuxt/test-utils`, happy-dom                                       |
 | Code quality | ESLint, Prettier, `vue-tsc`                                                 |
-| Tooling      | pnpm, Node.js 22                                                            |
+| Tooling      | pnpm, Node.js 24                                                            |
 | Hosting      | Netlify                                                                     |
 
 ## Development

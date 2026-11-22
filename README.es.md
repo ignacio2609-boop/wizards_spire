@@ -11,7 +11,7 @@ jugar — gratis, desde el navegador, sin instalar nada.
 
 ## Estado del proyecto
 
-Versión **0.0.0**: la base. El stack, la estructura del proyecto, los tests y el despliegue
+Versión **0.0.1**: la base. El stack, la estructura del proyecto, los tests y el despliegue
 están montados, con una primera parte de la creación de personajes:
 
 - Concepto del personaje: nombre, clase, especie, trasfondo y alineamiento.
@@ -42,7 +42,7 @@ El personaje se guarda en el navegador. No hay cuentas ni backend.
 | Datos del juego | SRD 5.2.1, importado en tiempo de build desde `5e-bits/5e-srd-api` a JSON local |
 | Tests           | Vitest, `@nuxt/test-utils`, happy-dom                                           |
 | Calidad         | ESLint, Prettier, `vue-tsc`                                                     |
-| Herramientas    | pnpm, Node.js 22                                                                |
+| Herramientas    | pnpm, Node.js 24                                                                |
 | Alojamiento     | Netlify                                                                         |
 
 ## Desarrollo
