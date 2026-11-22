@@ -43,7 +43,7 @@
     "daisyui": "5.7.22",
     "eslint": "10.9.0",
     "eslint-config-prettier": "10.1.8",
-    "happy-dom": "20.14.6",
+    "happy-dom": "21.0.4",
     "prettier": "3.9.6",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
